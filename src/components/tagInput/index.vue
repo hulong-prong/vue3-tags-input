@@ -70,6 +70,7 @@ const enterInput = async () => {
         ? [...tags.value, state.inputValue]
         : [state.inputValue]
       emit("update:value", newTags)
+      emit("change", newTags)
       // 清空输入框的值
       state.inputValue = ""
       setLabelDefaultValue()
@@ -117,6 +118,7 @@ const deleteInput = () => {
   // 当输入框没有数据的时候触发删除前一个tag
   if (!inputRef.value?.value && tags.value && tags.value.length > 0) {
     tags.value.splice(tags.value.length - 1, 1)
+    emit("change", tags.value)
   }
 }
 /**
@@ -147,6 +149,7 @@ const inputBlur = () => {
 const deleteTag = (index: number) => {
   if (index >= 0) {
     tags.value?.splice(index, 1)
+    emit("change", tags.value ?? [])
   }
 }
 /**
