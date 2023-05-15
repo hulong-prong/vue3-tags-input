@@ -1,16 +1,15 @@
 {
   "name": "vue-tags-input",
   "author": "hulong",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
+  "keywords": [
+    "vue3, input, tags, vue, vue-tag, tag-input"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview",
-    "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "preview": "vite preview"
   },
   "license": "MIT",
   "main": "dist/vue-tags-input.js",
@@ -56,7 +55,6 @@
     "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "7.0.10",
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
     "vite-plugin-eslint": "^1.8.1",

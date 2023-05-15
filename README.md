@@ -1,18 +1,44 @@
-# Vue 3 + TypeScript + Vite
+## vue3-tags-input
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+这是基于 vue3 的 tags 输入框
+<br />
 
-## Recommended IDE Setup
+## 示例
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+```html
+<template>
+  <div class="w-[600px]">
+    <TagInput
+      v-model:value="tags"
+      placeholder="请输入"
+      :check-tag="handleCheckTag"
+      :disabled="false"
+    >
+    </TagInput>
+  </div>
+</template>
 
-## Type Support For `.vue` Imports in TS
+<script setup lang="ts">
+import { ref } from "vue"
+import TagInput from "vue-tags-input"
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+const tags = ref<string[]>([])
+// 错误校验示例
+const handleCheckTag = (value: string) => {
+  if (tags.value.includes(value)) {
+    return Promise.reject("tag已存在")
+  }
+  return Promise.resolve("")
+}
+```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### props
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+value: string[] // tags 值
+placeholder: string
+disabled: boolean
+check-tag: () => Promise<T>
+
+### emit
+
+change: (tags: string[]) => void
