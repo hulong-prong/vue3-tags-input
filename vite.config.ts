@@ -17,6 +17,12 @@ export default defineConfig({
       "/@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    lib: {
+      entry: "./src/components/tagInput/index.ts",
+      name: "tagInput",
+    },
+  },
   css: {
     preprocessorOptions: {
       less: { javascriptEnabled: true },

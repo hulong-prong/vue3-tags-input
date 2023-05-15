@@ -1,7 +1,8 @@
 {
   "name": "vue-tags-input",
+  "author": "hulong",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +11,24 @@
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "license": "MIT",
+  "main": "dist/vue-tags-input.js",
+  "module": "dist/vue-tags-input.ts",
+  "unpkg": "dist/vue-tags-input.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-tags-input.js",
+      "require": "./dist/vue-tags-input.umd.cjs"
+    },
+    "./*": "./*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hulong-prong/vue3-tags-input"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "vue": "^3.2.47"
