@@ -1,7 +1,7 @@
 {
   "name": "vue3-input-tag",
   "author": "hulong",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "keywords": [
     "vue3, input, tags, vue, vue-tag, tag-input"

@@ -243,6 +243,9 @@ onUnmounted(() => {
   border: 1px solid #ccc;
   padding: 2px 4px;
   min-height: 32px;
+  &:hover {
+    border-color: #40a9ff;
+  }
   #tag_input_label {
     visibility: hidden;
     white-space: pre;
