@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from "vue"
-import deleteIcon from "/@/assets/deleteIcon.png"
+import deleteIcon from "../../assets/deleteIcon.png"
 
 const props = defineProps({
   tag: String,

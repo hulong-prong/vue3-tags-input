@@ -10,7 +10,7 @@ import {
   computed,
 } from "vue"
 import { stateType } from "./type"
-import Tag from "/@/components/tagInput/Tag.vue"
+import Tag from "./Tag.vue"
 
 const props = defineProps({
   value: {
@@ -212,6 +212,7 @@ onUnmounted(() => {
           type="text"
           :disabled="disabled"
           v-model="state.inputValue"
+          autocomplete="off"
           @keyup.enter="enterInput"
           @keyup.delete="deleteInput"
           @blur="inputBlur"
@@ -241,13 +242,14 @@ onUnmounted(() => {
   align-items: center;
   border: 1px solid #ccc;
   padding: 2px 4px;
-  min-height: 36px;
+  min-height: 32px;
   #tag_input_label {
     visibility: hidden;
     white-space: pre;
   }
   .input_width_box {
     min-width: 4px;
+    padding-right: 4px;
     position: relative;
   }
   .tag_input {
@@ -275,10 +277,10 @@ onUnmounted(() => {
   box-shadow: none;
 }
 .error_text {
-  font-size: 14px;
   text-align: left;
   color: red;
-  font-weight: 100;
+  font-weight: 400;
+  position: absolute;
 }
 .placeholder_box {
   position: absolute;

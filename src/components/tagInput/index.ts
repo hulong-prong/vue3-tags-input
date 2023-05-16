@@ -1,5 +1,5 @@
 import { App } from "vue"
-import TagInput from "/@/components/tagInput/index.vue"
+import TagInput from "./index.vue"
 
 export { TagInput }
 
